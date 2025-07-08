@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Portal - 2D to 3D Model Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span class="logo-icon">🌙</span>
+          <span class="logo-text">Moon Portal</span>
+        </div>
+        <div class="nav-links">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#upload" class="nav-link">Generate</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="moon-bg">
+        <div id="moon-3d-container"></div>
+        <div class="moon-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Transform 2D Moon Images</h1>
+          <h2 class="hero-subtitle">Into Stunning 3D Models</h2>
+          <p class="hero-description">
+            Upload your lunar photographs and watch them come to life in three
+            dimensions using advanced AI technology.
+          </p>
+          <button class="cta-button" onclick="scrollToSection('upload')">
+            Start Creating
+            <span class="button-arrow">→</span>
+          </button>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-title">
+          <h2 class="section-title single-line-title">
+            Advanced Lunar Reconstruction
+          </h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-content">
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-text">
+                  <h3>AI-Powered Processing</h3>
+                  <p>
+                    Our cutting-edge algorithms analyze lunar surface features
+                    to create accurate 3D reconstructions.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🌌</div>
+                <div class="feature-text">
+                  <h3>High-Quality Output</h3>
+                  <p>
+                    Generate detailed 3D models with realistic textures and
+                    topographical accuracy.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-text">
+                  <h3>Lightning Fast</h3>
+                  <p>
+                    Advanced processing ensures your 3D models are ready in
+                    minutes, not hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-visual">
+            <div class="process-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Upload Image</h4>
+                  <p>Select your lunar photograph</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>AI Analysis</h4>
+                  <p>Our system analyzes surface features</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>3D Generation</h4>
+                  <p>Your model is created and ready</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+      <div class="container">
+        <div class="upload-content">
+          <h2 class="section-title">Create Your 3D Moon Model</h2>
+          <p class="section-description">
+            Upload a 2D image of the moon and watch it transform into a detailed
+            3D model
+          </p>
+
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 10L12 5L17 10"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 5V19"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="upload-title">Drag & Drop your moon image here</h3>
+            <p class="upload-subtitle">or click to browse files</p>
+            <input type="file" id="fileInput" accept="image/*" hidden />
+            <div class="file-requirements">
+              <span>Supported formats: JPG, PNG, WebP</span>
+              <span>Max size: 10MB</span>
+            </div>
+          </div>
+
+          <div class="uploaded-file" id="uploadedFile" style="display: none">
+            <div class="file-info">
+              <div class="file-icon">📷</div>
+              <div class="file-details">
+                <span class="file-name" id="fileName"></span>
+                <span class="file-size" id="fileSize"></span>
+              </div>
+              <button class="remove-file" id="removeFile">×</button>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <button class="generate-button" id="generateButton">
+              Generate 3D Model
+              <span class="button-loader" style="display: none">⟳</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <span class="logo-icon">🌙</span>
+              <span class="logo-text">Moon Portal</span>
+            </div>
+            <p>Transforming lunar photography into immersive 3D experiences.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Technology</h4>
+            <ul>
+              <li>AI Processing</li>
+              <li>3D Reconstruction</li>
+              <li>Real-time Rendering</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li>Documentation</li>
+              <li>API Reference</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Moon Portal. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="vendor/three.min.js"></script>
+    <script src="vendor/TrackballControls.js"></script>
+    <script src="vendor/detector.min.js"></script>
+    <script src="vendor/stats.min.js"></script>
+    <script src="vendor/screenfull.min.js"></script>
+
+    <!-- Shader Fix -->
+    <script id="norm-vert-shader" type="x-shader/x-vertex">
+      varying vec2 vUv;
+      varying vec3 vNormal;
+      varying vec3 vPosition;
+
+      void main() {
+        vUv = uv;
+        vNormal = normalize(normalMatrix * normal);
+        vPosition = (modelViewMatrix * vec4(position, 1.0)).xyz;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    </script>
+
+    <script id="norm-frag-shader" type="x-shader/x-fragment">
+      uniform sampler2D textureMap;
+      uniform sampler2D normalMap;
+      uniform vec3 lightPosition;
+
+      varying vec2 vUv;
+      varying vec3 vNormal;
+      varying vec3 vPosition;
+
+      void main() {
+        vec3 normalTex = texture2D(normalMap, vUv).rgb;
+        normalTex = normalize(normalTex * 2.0 - 1.0);
+
+        vec3 lightDir = normalize(lightPosition - vPosition);
+        float diff = max(dot(normalTex, lightDir), 0.0);
+
+        vec3 color = texture2D(textureMap, vUv).rgb;
+        color *= diff + 0.1; // ambient light
+
+        gl_FragColor = vec4(color, 1.0);
+      }
+    </script>
+
+    <!-- Your Main JavaScript -->
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
